@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var count = 0;
+      //   var n = prompt('숫자를 입력해주세요');
+      //   var number = Number(n);
+
+      //   for (let i = 1; i <script number + 1; i++) {
+      //     if (number % i === 0) {
+      //       count++;
+      //     }
+      //   }
+      //   if (count === 2 || count === 1) {
+      //     console.log(`${number}은 소수입니다.`);
+      //   } else {
+      //     console.log(`${number}은 소수가 아닙니다.`);
+      //   }
+      var isPrime = true;
+      var n = Number(prompt('2이상의 숫자를 입력해주세요'));
+      for (let i = 2; i < n; i++) {
+        if (n % 2 === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) {
+        console.log(`${n} 은 소수입니다.`);
+      } else {
+        console.log(`${n}은 소수가 아닙니다.`);
+      }
+    </script>
+  </body>
+</html>

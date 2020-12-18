@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="ex4.js" defer></script>
+  </head>
+  <body>
+    <div></div>
+      <input id ="n1" type="text" value="" /><br>
+      <input id ="input" type="text" value="" /><br>
+      <input id ="n2"type="text" value="" /><br>
+      <button class="btn">확인</button>
+    </div>
+    <div class="output">결과값</div>
+    <script>
+      let fact = function(n) {
+        if(n === 1){
+          return 1;
+        }
+        return (n * fact(n-1));
+      }
+      console.log(fact(4));
+    </script>
+  </body>
+</html>

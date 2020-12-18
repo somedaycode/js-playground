@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gugudan2</title>
+  </head>
+  <body>
+    출력할 단: <input type="text" id="num" />
+    <button onclick="gugudan()">확인</button>
+    <script>
+      function gugudan() {
+        var strN = document.querySelector('#num').value;
+        var n = Number(strN);
+        if (n < 2 || n > 9) {
+          console.log('오류');
+        } else {
+          document.write(`<h2>${n}단</h2><br>`);
+          for (let i = 1; i < 10; i++) {
+            document.write(`${n} * ${i} = ${n * i}
+          <br>`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

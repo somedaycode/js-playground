@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>좌표 실습</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      div {
+        margin-bottom: 4px;
+        border-radius: 4px;
+        width: 100px;
+        height: 100px;
+        background: beige;
+      }
+
+      #box {
+        background: chocolate;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="box"></div>
+    <div></div>
+    <div></div>
+    <script>
+      const box = document.querySelector('#box');
+      box.addEventListener('click', (e) => {
+        const rect = box.getBoundingClientRect();
+        console.log(rect);
+        console.log(`client: ${e.clientX}, ${e.clientY}`);
+        console.log(`page: ${e.pageX}, ${e.pageY}`);
+      });
+    </script>
+  </body>
+</html>

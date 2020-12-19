@@ -16,22 +16,18 @@
         background: beige;
       }
 
-      .btns {
-        position: fixed;
-        right: 20px;
-      }
-
       #box {
         background: chocolate;
+      }
+
+      aside {
+        position: fixed;
+        top: 20px;
+        right: 20px;
       }
     </style>
   </head>
   <body>
-    <nav class="btns">
-      <button onclick="window.scrollBy(0,100);">scroll by 100px(y)</button>
-      <button onclick="window.scrollTo(0, 100);">scroll to 100px(y)</button>
-      <button onclick="scrollBox()">scroll into box</button>
-    </nav>
     <div></div>
     <div></div>
     <div></div>
@@ -48,20 +44,35 @@
     <div id="box"></div>
     <div></div>
     <div></div>
-
+    <aside>
+      <button class="scroll-by">scroll 100px</button>
+      <button class="scroll-to">scroll to 100px</button>
+      <button class="scroll-into">scroll into box</button>
+    </aside>
     <script>
       const box = document.querySelector('#box');
-      function scrollBox() {
-        console.log(box.offsetTop);
-        console.log(box.getBoundingClientRect().top);
-        scrollTo(0, box.offsetTop);
-        // scrollTo(0, box.getBoundingClientRect().top);
-      }
       box.addEventListener('click', (e) => {
         const rect = box.getBoundingClientRect();
         console.log(rect);
         console.log(`client: ${e.clientX}, ${e.clientY}`);
         console.log(`page: ${e.pageX}, ${e.pageY}`);
+      });
+
+      const scrollBy = document.querySelector('.scroll-by');
+      const scrollTo = document.querySelector('.scroll-to');
+      const scrollInto = document.querySelector('.scroll-into');
+
+      scrollBy.addEventListener('click', () => {
+        // window.scrollBy(0, 100);
+        window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+      });
+
+      scrollTo.addEventListener('click', () => {
+        window.scrollTo(0, 100);
+      });
+
+      scrollInto.addEventListener('click', () => {
+        box.scrollIntoView();
       });
     </script>
   </body>
